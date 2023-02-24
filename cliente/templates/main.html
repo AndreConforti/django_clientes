@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+<title>Página Principal</title>
+
+{% block content %}
+
+<h1>Bem-vindo à Página Principal</h1>
+
+<div class="col-8 m-auto pt-2 pb-4">
+    <a href="{% url 'cliente:cadastrar' %}" class="btn btn-primary">Cadastrar Cliente</a>
+</div>
+<div class="col-8 m-auto pt-2 pb-4">
+    <a href="{% url 'cliente:consultar' %}" class="btn btn-primary">Consultar Cliente</a>
+</div>
+
+
+
+{% endblock %}

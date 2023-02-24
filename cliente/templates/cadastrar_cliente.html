@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+{% if update %}
+    <h1>Editar Cliente</h1>
+{% endif %}
+
+{% if form %}
+    <h1>Cadastrar Cliente</h1>
+{% endif %}
+
+    {% if msg %} 
+        <div class="alert alert-success">{{ msg }}</div>
+    {% endif %} 
+
+    <form method="post">
+        {% csrf_token %}
+        <!-- {{ form.as_p }}  # Dessa forma mostra todos os campos em uma coluna -->
+        <!-- Dessa forma fica mais bonito, colocando cada campo em uma div -->
+        <div class="form-group mt-4">{{ form.nome }}</div>
+        <div class="form-group mt-4">{{ form.cpf }}</div>
+        <div class="form-group mt-4">{{ form.telefone }}</div>
+        <div class="form-group mt-4 mb-4">{{ form.email }}</div>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+{% endblock %}
